@@ -1,7 +1,9 @@
 #include <Arduino.h>
 #include "MotorController.h"
 
-MotorController motors;
+#include "Rover.h"
+
+Rover rover;
 #include "Version.h"
 #include "Constants.h"
 #include "Pins.h"
@@ -17,65 +19,44 @@ void initializeGPIO()
 
 void setup()
 {
-    motors.begin();
+  rover.begin();
     Serial.println();
-Serial.println("========== MOTOR TEST ==========");
+Serial.println("===== ROVER LIBRARY TEST =====");
+
+rover.setSpeed(80);
 
 delay(2000);
 
 Serial.println("Forward");
-motors.forward(80);
+rover.moveForward();
 delay(2000);
 
-motors.stop();
-Serial.println("Stop");
+rover.stop();
 delay(1000);
 
-Serial.println("Reverse");
-motors.reverse(80);
+Serial.println("Backward");
+rover.moveBackward();
 delay(2000);
 
-motors.stop();
-Serial.println("Stop");
+rover.stop();
 delay(1000);
 
 Serial.println("Left");
-motors.left(80);
+rover.turnLeft();
 delay(1500);
 
-motors.stop();
+rover.stop();
 delay(1000);
 
 Serial.println("Right");
-motors.right(80);
+rover.turnRight();
 delay(1500);
 
-motors.stop();
+rover.stop();
 
-Serial.println("Motor Test Complete");
-    Serial.begin(AGRIX::SERIAL_BAUD);
-
-    delay(1000);
-
-    initializeGPIO();
-
-    Serial.println();
-    Serial.println("========================================");
-    Serial.println(PROJECT_NAME);
-    Serial.println("AI Smart Agricultural Rover");
-    Serial.println("----------------------------------------");
-    Serial.print("Version : ");
-    Serial.println(PROJECT_VERSION);
-    Serial.print("Author  : ");
-    Serial.println(PROJECT_AUTHOR);
-    Serial.println("----------------------------------------");
-
-    Serial.println("GPIO Initialized");
-    Serial.println("System Ready");
-
-    digitalWrite(Pins::STATUS_LED, HIGH);
+Serial.println("Rover Library OK");
 }
-
 void loop()
 {
+    // Future rover code will run here
 }
