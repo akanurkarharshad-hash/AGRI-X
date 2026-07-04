@@ -1,62 +1,43 @@
-#include <Arduino.h>
-#include "MotorController.h"
+#include "WiFiManager.h"
 
+WiFiManager wifi;
+#include <Arduino.h>
+#include "Version.h"
+#include "Pins.h"
 #include "Rover.h"
 
 Rover rover;
-#include "Version.h"
-#include "Constants.h"
-#include "Pins.h"
-#include "Config.h"
-#include "Types.h"
 
 void initializeGPIO()
 {
     pinMode(Pins::STATUS_LED, OUTPUT);
-
     digitalWrite(Pins::STATUS_LED, LOW);
 }
 
 void setup()
 {
-  rover.begin();
+    wifi.begin();
+    Serial.begin(115200);
+    delay(1000);
+
+    initializeGPIO();
+
     Serial.println();
-Serial.println("===== ROVER LIBRARY TEST =====");
+    Serial.println("========================================");
+    Serial.println("AGRI-X");
+    Serial.println("AI Smart Agricultural Rover");
+    Serial.println("----------------------------------------");
+    Serial.print("Version : ");
+   Serial.println(PROJECT_VERSION);
+    Serial.println("========================================");
 
-rover.setSpeed(80);
+    rover.begin();
+    wifi.begin();
 
-delay(2000);
-
-Serial.println("Forward");
-rover.moveForward();
-delay(2000);
-
-rover.stop();
-delay(1000);
-
-Serial.println("Backward");
-rover.moveBackward();
-delay(2000);
-
-rover.stop();
-delay(1000);
-
-Serial.println("Left");
-rover.turnLeft();
-delay(1500);
-
-rover.stop();
-delay(1000);
-
-Serial.println("Right");
-rover.turnRight();
-delay(1500);
-
-rover.stop();
-
-Serial.println("Rover Library OK");
+    Serial.println("System Ready");
 }
+
 void loop()
 {
-    // Future rover code will run here
+    wifi.handleClient();
 }
