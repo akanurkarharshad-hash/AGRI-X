@@ -1,0 +1,47 @@
+# PlatformIO build directories
+.pio/
+.pioenvs/
+.piolibdeps/
+.piodeps/
+
+# Build output
+build/
+dist/
+*.o
+*.a
+*.so
+*.pyc
+
+# IDE and editor files
+.vscode/
+.vs/
+*.sublime-workspace
+*.sublime-project
+*.code-workspace
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+
+# Temporary files
+*.tmp
+*.bak
+*.log
+*.swp

@@ -28,8 +28,8 @@ constexpr uint8_t RIGHT_EN  = 14;
 // Probe Motor Driver (L298N #2)
 // ==========================
 
-constexpr uint8_t PROBE_IN1 = 18;
-constexpr uint8_t PROBE_IN2 = 19;
+constexpr uint8_t PROBE_IN3 = 5;
+constexpr uint8_t PROBE_IN4 = 13;
 constexpr uint8_t PROBE_EN  = 23;
     // ==========================
    

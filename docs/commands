@@ -1,0 +1,4 @@
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+.\venv\Scripts\Activate.ps1
+python -m uvicorn api:app --host 0.0.0.0 --port 8000
+python -m uvicorn api:app --reload

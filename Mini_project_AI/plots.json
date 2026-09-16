@@ -1,0 +1,99 @@
+{
+    "P01": {
+        "name": "North Field",
+        "crop": "wheat",
+        "readings": [
+            {
+                "nitrogen": 100.0,
+                "phosphorus": 5.0,
+                "potassium": 50.0,
+                "ph": 6.4,
+                "timestamp": "2026-09-04 11:52:58"
+            },
+            {
+                "nitrogen": 105.0,
+                "phosphorus": 7.0,
+                "potassium": 55.0,
+                "ph": 6.5,
+                "timestamp": "2026-09-04 11:53:48"
+            },
+            {
+                "nitrogen": 150.0,
+                "phosphorus": 10.0,
+                "potassium": 100.0,
+                "ph": 6.8,
+                "timestamp": "2026-09-04 11:55:39"
+            },
+            {
+                "nitrogen": 300.0,
+                "phosphorus": 20.0,
+                "potassium": 150.0,
+                "ph": 7.0,
+                "timestamp": "2026-09-04 11:57:16"
+            }
+        ]
+    },
+    "P02": {
+        "name": "River Side",
+        "crop": "rice",
+        "readings": [
+            {
+                "nitrogen": 300.0,
+                "phosphorus": 167.0,
+                "potassium": 247.0,
+                "ph": 5.0,
+                "timestamp": "2026-08-30 15:18:23"
+            }
+        ]
+    },
+    "P03": {
+        "name": "Back Field",
+        "crop": "soybean",
+        "readings": [
+            {
+                "timestamp": "2026-08-30 12:24:11",
+                "nitrogen": 34.0,
+                "phosphorus": 43.0,
+                "potassium": 34.0,
+                "ph": 6.7
+            },
+            {
+                "nitrogen": 100.0,
+                "phosphorus": 30.0,
+                "potassium": 100.0,
+                "ph": 6.5,
+                "timestamp": "2026-09-04 11:58:56"
+            },
+            {
+                "nitrogen": 200.0,
+                "phosphorus": 38.0,
+                "potassium": 200.0,
+                "ph": 8.0,
+                "timestamp": "2026-09-04 11:59:26"
+            }
+        ]
+    },
+    "P04": {
+        "name": "ran",
+        "crop": "wheat",
+        "readings": [
+            {
+                "nitrogen": 356.0,
+                "phosphorus": 54.0,
+                "potassium": 344.0,
+                "ph": 5.8,
+                "timestamp": "2026-08-30 14:13:04"
+            }
+        ]
+    },
+    "P05": {
+        "name": "Cotton",
+        "crop": "cotton",
+        "readings": []
+    },
+    "P06": {
+        "name": "Sugercane",
+        "crop": "sugarcane",
+        "readings": []
+    }
+}

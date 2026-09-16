@@ -1,0 +1,35 @@
+{
+    "P01": {
+        "crop": "wheat",
+        "readings": [
+            {
+                "date": "2026-08-01",
+                "nitrogen": 52,
+                "phosphorus": 31,
+                "potassium": 108,
+                "ph": 6.4
+            },
+            {
+                "date": "2026-08-08",
+                "nitrogen": 47,
+                "phosphorus": 30,
+                "potassium": 106,
+                "ph": 6.3
+            },
+            {
+                "date": "2026-08-15",
+                "nitrogen": 41,
+                "phosphorus": 30,
+                "potassium": 103,
+                "ph": 6.3
+            },
+            {
+                "date": "2026-08-22",
+                "nitrogen": 35,
+                "phosphorus": 29,
+                "potassium": 101,
+                "ph": 6.2
+            }
+        ]
+    }
+}

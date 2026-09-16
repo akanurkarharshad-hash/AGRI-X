@@ -1,5 +1,8 @@
 #include "Rover.h"
 
+constexpr uint8_t DRIVE_SPEED = 200;   // Forward / Backward
+constexpr uint8_t TURN_SPEED  = 210;   // Left / Right
+
 bool Rover::begin()
 {
     return motors.begin();
@@ -27,12 +30,12 @@ void Rover::turnRight()
 
 void Rover::rotateLeft()
 {
-    motors.left(currentSpeed);
+    motors.left(TURN_SPEED);
 }
 
 void Rover::rotateRight()
 {
-    motors.right(currentSpeed);
+    motors.right(TURN_SPEED);
 }
 
 void Rover::stop()

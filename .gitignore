@@ -3,3 +3,29 @@
 .vscode/c_cpp_properties.json
 .vscode/launch.json
 .vscode/ipch
+
+# Local credentials and device-specific configuration
+include/Secrets.h
+Mini_project_AI/esp32_firmware/config.h
+**/.env
+**/.env.*
+
+# Python environments, caches, generated inference/training artifacts
+**/__pycache__/
+**/*.py[cod]
+**/.venv/
+**/venv/
+AI/dataset/
+AI/runs/
+AI/models/
+AI/static/latest.jpg
+AI/*.pt
+AI/test.jpg
+
+# Flutter/Dart generated files
+AI/agri_x/.dart_tool/
+AI/agri_x/build/
+AI/agri_x/.metadata
+AI/agri_x/.flutter-plugins
+AI/agri_x/.flutter-plugins-dependencies
+Mini_project_AI/esp32_firmware/include/config.h

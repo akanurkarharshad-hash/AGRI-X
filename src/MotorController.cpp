@@ -4,7 +4,7 @@
 constexpr uint8_t LEFT_CHANNEL  = 0;
 constexpr uint8_t RIGHT_CHANNEL = 1;
 
-constexpr uint32_t PWM_FREQ = 1000;
+constexpr uint32_t PWM_FREQ = 5000;
 constexpr uint8_t PWM_RESOLUTION = 8;
 
 bool MotorController::begin()
@@ -56,14 +56,19 @@ void MotorController::reverse(uint8_t speed)
 
 void MotorController::left(uint8_t speed)
 {
-    leftMotor(false,speed);
-    rightMotor(true,speed);
-}
+    // Left motor slow forward
+    leftMotor(false, 80);
 
+    // Right motor full forward
+    rightMotor(true, 255);
+}
 void MotorController::right(uint8_t speed)
 {
-    leftMotor(true,speed);
-    rightMotor(false,speed);
+    // Left motor full forward
+    leftMotor(true, 255);
+
+    // Right motor slow forward
+    rightMotor(false, 80);
 }
 
 void MotorController::stop()
