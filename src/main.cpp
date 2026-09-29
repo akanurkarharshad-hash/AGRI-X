@@ -69,4 +69,5 @@ void setup()
 void loop()
 {
     gps.update();
+    wifi.service();
 }
