@@ -23,6 +23,8 @@ public:
     float getTemperature() const;
 
     float getHumidity() const;
+    bool isValid() const;
+    uint32_t getTimestamp() const;
 
 private:
 
@@ -33,4 +35,6 @@ private:
     float humidity;
 
     unsigned long lastRead;
+    uint32_t validTimestamp = 0;
+    bool valid = false;
 };

@@ -1,4 +1,5 @@
 #include "GPSManager.h"
+#include "TimingConfig.h"
 
 bool GPSManager::begin()
 {
@@ -11,9 +12,11 @@ bool GPSManager::begin()
 
 void GPSManager::update()
 {
-    while (gpsSerial.available())
+    uint8_t bytesRead = 0;
+    while (gpsSerial.available() && bytesRead < TimingConfig::GPS_BYTES_PER_LOOP)
     {
         gps.encode(gpsSerial.read());
+        ++bytesRead;
     }
 
     if (gps.location.isUpdated())

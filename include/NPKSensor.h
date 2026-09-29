@@ -1,6 +1,7 @@
 #pragma once
 
 #include <Arduino.h>
+#include <stdint.h>
 
 class NPKSensor
 {
@@ -9,6 +10,8 @@ public:
     bool begin();
 
     void update();
+    bool isValid() const;
+    uint32_t getTimestamp() const;
 
     float getMoisture() const;
     float getTemperature() const;
@@ -32,8 +35,15 @@ private:
     uint16_t phosphorus = 0;
     uint16_t potassium = 0;
 
-    unsigned long lastRead = 0;
+    uint32_t lastRead = 0;
+    uint32_t requestStarted = 0;
+    uint32_t validTimestamp = 0;
+    uint8_t response[32] = {};
+    uint8_t responseLength = 0;
+    bool requestPending = false;
+    bool valid = false;
 
-    bool readSensor();
-    uint16_t calculateCRC(uint8_t *data, uint8_t length);
+    void startRequest(uint32_t now);
+    void finishResponse();
+    uint16_t calculateCRC(const uint8_t *data, uint8_t length);
 };
