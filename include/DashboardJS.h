@@ -10,9 +10,6 @@ const char dashboardJS[] PROGMEM = R"rawliteral(
 // Initialize Dashboard
 window.onload = function()
 {
-    updateSensors();
-    updateStatus();
-
     updateSpeed(180);
     setInterval(function()
 {
@@ -28,22 +25,6 @@ window.onload = function()
 
     addLog("Dashboard Started");
 };
-
-// -----------------------------
-// Sensor Refresh
-// -----------------------------
-setInterval(function()
-{
-    updateSensors();
-},1000);
-
-// -----------------------------
-// Status Refresh
-// -----------------------------
-setInterval(function()
-{
-    updateStatus();
-},1000);
 
 /*=========================
       LIVE CAMERA
