@@ -1,5 +1,4 @@
 #include "DHTSensor.h"
-#include "TimingConfig.h"
 
 DHTSensor::DHTSensor()
     : dht(DHT_PIN, DHT_TYPE)
@@ -14,15 +13,13 @@ bool DHTSensor::begin()
     humidity = 0.0f;
 
     lastRead = 0;
-    valid = false;
-    validTimestamp = 0;
 
     return true;
 }
 
 void DHTSensor::update()
 {
-    if (millis() - lastRead < TimingConfig::DHT_SAMPLE_INTERVAL_MS)
+    if (millis() - lastRead < 2000)
         return;
 
     lastRead = millis();
@@ -32,13 +29,10 @@ void DHTSensor::update()
 
     if (isnan(h) || isnan(t))
     {
-        valid = false;
         return;
     }
 
     humidity = h;
-    validTimestamp = millis();
-    valid = true;
     temperature = t;
 }
 
@@ -51,6 +45,3 @@ float DHTSensor::getHumidity() const
 {
     return humidity;
 }
-
-bool DHTSensor::isValid() const { return valid; }
-uint32_t DHTSensor::getTimestamp() const { return validTimestamp; }

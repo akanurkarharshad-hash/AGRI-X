@@ -248,15 +248,15 @@ const char dashboardHTML[] PROGMEM = R"rawliteral(
         <div class="controlGrid">
 
           <div></div>
-          <button class="forward" onpointerdown="forward();event.preventDefault()">⬆ Fwd</button>
+          <button class="forward" onclick="forward()">⬆ Fwd</button>
           <div></div>
 
-          <button class="left" onpointerdown="left();event.preventDefault()">⬅ Left</button>
+          <button class="left" onclick="left()">⬅ Left</button>
           <button class="stop" onclick="stop()">■ Stop</button>
-          <button class="right" onpointerdown="right();event.preventDefault()">➡ Right</button>
+          <button class="right" onclick="right()">➡ Right</button>
 
           <div></div>
-          <button class="backward" onpointerdown="backward();event.preventDefault()">⬇ Back</button>
+          <button class="backward" onclick="backward()">⬇ Back</button>
           <div></div>
 
         </div>

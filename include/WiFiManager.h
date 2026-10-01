@@ -4,14 +4,12 @@
 #include <Arduino.h>
 #include <WiFi.h>
 #include <ESPAsyncWebServer.h>
-#include <AsyncWebSocket.h>
 
 class WiFiManager
 {
 public:
 
     bool begin();
-    void service();
 
 private:
 
@@ -20,24 +18,8 @@ private:
 
     WiFiConfig wifiConfig;
     AsyncWebServer server{80};
-    AsyncWebSocket websocket{"/ws"};
-    uint32_t lastMovementAt = 0;
-    uint32_t lastTelemetryAt = 0;
-    uint32_t lastMovementSequence = 0;
-    uint32_t lastStopSequence = 0;
-    uint32_t controllerClientId = 0;
-    bool controllerCommandSeen = false;
-    bool watchdogStopped = true;
-    bool restartPending = false;
-    uint32_t restartAt = 0;
-    bool stationConnectPending = false;
-    uint32_t stationConnectStarted = 0;
 
     void setupRoutes();
-    void handleWebSocketEvent(AsyncWebSocketClient *client, AwsEventType type,
-                              void *arg, uint8_t *data, size_t len);
-    void handleMovement(const char *command, uint8_t speed, uint32_t sequence, bool websocketCommand);
-    void publishTelemetry(uint32_t now);
 
     // Dashboard
     void handleRoot(AsyncWebServerRequest *request);
