@@ -16,12 +16,11 @@ window.onload = function()
     updateSpeed(180);
     setInterval(function()
 {
-    const img = document.getElementById("liveCamera");
+        const img = document.getElementById("aiImage");
 
     if(img)
     {
-        img.src =
-        "http://172.21.36.75:8000/static/latest.jpg?t=" + Date.now();
+        img.src = "/media/latest-image?t=" + Date.now();
     }
 
 },200);
@@ -57,8 +56,7 @@ function startCamera()
     if(!camera)
         return;
 
-    camera.src =
-        "http://172.21.36.75:8080/video";
+    camera.src = "/media/camera";
 }
 
 window.addEventListener("load", startCamera);

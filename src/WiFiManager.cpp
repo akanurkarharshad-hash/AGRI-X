@@ -1,14 +1,5 @@
 #include "WiFiManager.h"
 #include "WiFiSetupHTML.h"
-#include "UtilsJS.h"
-#include "ControlJS.h"
-#include "SensorJS.h"
-#include "StatusJS.h"
-#include "LogJS.h"
-#include "DashboardHTML.h"
-#include "DashboardCSS.h"
-#include "DashboardJS.h"
-#include "AIJS.h"
 #include "Rover.h"
 #include "DHTSensor.h"
 #include "GPSManager.h"
@@ -105,10 +96,10 @@ void WiFiManager::handleWiFiSetup(AsyncWebServerRequest *request)
 void WiFiManager::setupRoutes()
 {
     server.on("/", HTTP_GET,
-[this](AsyncWebServerRequest *request)
-{
-    handleRoot(request);
-});
+    [](AsyncWebServerRequest *request)
+    {
+        request->send(200, "text/plain", "AGRI-X rover gateway online. Open the laptop dashboard.");
+    });
     server.on("/wifi", HTTP_GET,
 [this](AsyncWebServerRequest *request)
 {
@@ -196,25 +187,7 @@ NULL,
 }
 void WiFiManager::handleRoot(AsyncWebServerRequest *request)
 {
-    String html = dashboardHTML;
-
-html.replace("%CSS%", dashboardCSS);
-
-html.replace("%UTILS_JS%", utilsJS);
-
-html.replace("%CONTROL_JS%", controlJS);
-
-html.replace("%SENSOR_JS%", sensorJS);
-
-html.replace("%STATUS_JS%", statusJS);
-
-html.replace("%LOG_JS%", logJS);
-
-html.replace("%AI_JS%", aiJS);
-
-html.replace("%DASHBOARD_JS%", dashboardJS);
-
-    request->send(200, "text/html", html);
+    request->send(200, "text/plain", "AGRI-X rover gateway online. Open the laptop dashboard.");
 }
 void WiFiManager::handleSensorData(AsyncWebServerRequest *request)
 {

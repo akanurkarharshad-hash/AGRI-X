@@ -9,6 +9,7 @@ include/Secrets.h
 Mini_project_AI/esp32_firmware/config.h
 **/.env
 **/.env.*
+!.env.example
 
 # Python environments, caches, generated inference/training artifacts
 **/__pycache__/
@@ -29,3 +30,9 @@ AI/agri_x/.metadata
 AI/agri_x/.flutter-plugins
 AI/agri_x/.flutter-plugins-dependencies
 Mini_project_AI/esp32_firmware/include/config.h
+
+# Laptop dashboard environment and generated frontend artifacts
+.env
+dashboard/node_modules/
+dashboard/dist/
+dashboard/*.tsbuildinfo

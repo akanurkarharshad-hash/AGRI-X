@@ -6,7 +6,7 @@ async function updateAI()
 {
     try
     {
-        const response = await fetch("http://172.21.36.105:8000/latest");
+        const response = await fetch("/api/vision/latest");
 
         if (!response.ok)
             return;
@@ -22,9 +22,7 @@ async function updateAI()
 
         if (img && data.image && data.image.length > 0)
         {
-            img.src =
-"http://http://172.21.36.105:8000/latest.jpg?t=" +
-Date.now();
+            img.src = "/media/latest-image?t=" + Date.now();
         }
     }
     catch(error)
