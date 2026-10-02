@@ -36,3 +36,4 @@ Mini_project_AI/esp32_firmware/include/config.h
 dashboard/node_modules/
 dashboard/dist/
 dashboard/*.tsbuildinfo
+dashboard/data/
