@@ -6,7 +6,7 @@ AGRI-X is a field-monitoring rover prototype developed for Smart India Hackathon
 
 | Layer | What it does |
 | --- | --- |
-| ESP32 rover firmware | Drives the rover and probe motor; reads DHT, GPS, and NPK/soil data; hosts a LittleFS web dashboard. |
+| ESP32 rover firmware | Drives the rover and probe motor; reads DHT, GPS, and NPK/soil data; hosts a Async web dashboard. |
 | Soil intelligence | Interprets NPK, pH, EC, moisture, and temperature readings to produce crop and fertilizer guidance. |
 | AI vision | Classifies crop-leaf disease images and returns treatment recommendations through a FastAPI service. |
 | Mobile app | Flutter interface for live camera, scan results, history, map, and rover interaction. |
@@ -25,11 +25,11 @@ AGRI-X is a field-monitoring rover prototype developed for Smart India Hackathon
 
 ## Hardware used
 
-- ESP32 DevKit
+- ESP32 DevKit V1
 - Motor driver and DC motors for rover movement
 - DHT temperature/humidity sensor
 - GPS receiver
-- RS485 NPK soil sensor (moisture, temperature, EC, pH, N, P, K)
+- RS485 NPK soil sensor (moisture, temperature, pH, N, P, K)
 - Motorised soil probe
 
 ## Run the primary ESP32 firmware
